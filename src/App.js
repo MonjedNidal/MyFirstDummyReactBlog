@@ -6,7 +6,7 @@ function App() {
     <div className="App" style={{display:'block', justifyContent:'center',width:'50%',margin:'auto'}}>
       
       <Header />
-      <Post />
+      <Post x = "Hi" y = "ww"/>
       <Footer />
     </div>
   );
