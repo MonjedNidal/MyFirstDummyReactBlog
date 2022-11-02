@@ -1,10 +1,16 @@
 const Post = (props) => {
-    console.log(props);
-    return ( <div className="post" style={{border:'solid 1px', marginBottom:'1rem'}}>
-    <p>example 1</p>
-    <button>Like</button>
-    <h6>20 Likes</h6>
-  </div> );
+    let {content, count, name} = props;
+    return ( 
+    <div className="post" style={{backgroundColor:'DarkSlateGray',color:'white',padding:'2rem', border:'solid 1px', marginBottom:'1rem', justifyContent:'space-between',display:'flex'}}>
+        <div>
+        <h3>{name}</h3>
+        <p>{content}</p>
+        </div>
+        <div>
+            <h5>{count} Likes</h5>
+            <button>Like</button>
+        </div>
+    </div> );
 }
- 
+
 export default Post;
