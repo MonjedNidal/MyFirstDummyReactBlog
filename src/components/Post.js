@@ -32,7 +32,6 @@ const Post = (props) => {
             isDeleted = true;
             setIsDeleted(isDeleted);
     }
-    if(!isDeleted){
         return ( 
         <div className="post" style={{backgroundColor:'DarkSlateGray',color:'white',padding:'2rem', border:'solid 1px', marginBottom:'1rem', justifyContent:'space-between',display:'flex'}}>
             <div>
@@ -45,10 +44,7 @@ const Post = (props) => {
 
                 <button onClick={deleteClicked}>Delete</button>
             </div>
-        </div> );
-    }else {
-        return null;
-    }
+    </div> );
 }
 
 export default Post;

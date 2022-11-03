@@ -12,16 +12,16 @@ function reqListener() {
 
 let posts = [
   {
+    key:1,
     name:'Monjed',
     content: 'Here is my first post',
     count: 323,
-    key:1
   },
   {
+    key:2,
     name:'Ali',
     content: 'Here is my second post',
     count: 32342,
-    key:2
   },
 
 ];
