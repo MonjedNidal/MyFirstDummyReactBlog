@@ -1,17 +1,19 @@
-import { useState } from "react";
+// import { useState } from "react";
 
-const Form = () => {
-    let [textField, setTextField] = useState("");
-    let updateTextField = (e) => {
-        let text = e.target.value;
-        setTextField(text);
-    }
+let Form = () => {
+    // let [textField, setTextField] = useState("");
+    // let updateTextField = (e) => {
+    //     let text = e.target.value;
+    //     setTextField(text);
+    // }
     return ( 
-        <div>
-            <input type={'text'} placeholder={'Enter your name'} onChange={updateTextField}></input>
-            <input type={'text'} placeholder={'What do you think about?'} onChange={updateTextField}></input>
+        <div style={{border:'solid 1px',marginBottom:'1rem'}}>
+            <div style={{margin:'1rem'}}>
+            <input type={'text'} placeholder={'Enter your name'} ></input>
+            </div>
+            <input style={{margin:'1rem'}} type={'text'} placeholder={'What do you think about?'}></input>
 
-            {/* <button onClick={}>Post</button> */}
+            <button>Post</button>
         </div> 
     );
 }

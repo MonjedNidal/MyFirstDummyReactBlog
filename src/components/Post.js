@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 
-let isLiked = false;
 const Post = (props) => {
     let {content, count, name} = props;
     // let [counter, likeIncrement] = useState(count);
@@ -13,7 +12,7 @@ const Post = (props) => {
     let [isLiked, clickLike] = useState(false);
 
 
-    function test(){
+    function likeClicked(){
         console.log(isLiked)
             if(!isLiked){
                 numOfLikes++;
@@ -27,17 +26,29 @@ const Post = (props) => {
                 addLike(numOfLikes)
             }
     }
-    return ( 
-    <div className="post" style={{backgroundColor:'DarkSlateGray',color:'white',padding:'2rem', border:'solid 1px', marginBottom:'1rem', justifyContent:'space-between',display:'flex'}}>
-        <div>
-        <h3>{name}</h3>
-        <p>{content}</p>
-        </div>
-        <div>
-            <h5>{numOfLikes} Likes</h5>
-            <button onClick={test}>Like</button>
-        </div>
-    </div> );
+    // let deleted = false;
+    let [isDeleted, setIsDeleted] = useState(false)
+    function deleteClicked(){
+            isDeleted = true;
+            setIsDeleted(isDeleted);
+    }
+    if(!isDeleted){
+        return ( 
+        <div className="post" style={{backgroundColor:'DarkSlateGray',color:'white',padding:'2rem', border:'solid 1px', marginBottom:'1rem', justifyContent:'space-between',display:'flex'}}>
+            <div>
+            <h3>{name}</h3>
+            <p>{content}</p>
+            </div>
+            <div>
+                <button onClick={likeClicked}>Like</button>
+                {numOfLikes == 0? null : <h5>{numOfLikes} Likes</h5>}
+
+                <button onClick={deleteClicked}>Delete</button>
+            </div>
+        </div> );
+    }else {
+        return null;
+    }
 }
 
 export default Post;
